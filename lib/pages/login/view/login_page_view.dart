@@ -32,7 +32,7 @@ class LoginPageView extends StatelessWidget with DecorationMixin {
             left: context.width / 4,
             child: Text(
               Texts.hotelName,
-              style: Theme.of(context).textTheme.headline1?.copyWith(
+              style: Theme.of(context).textTheme.displayLarge?.copyWith(
                     fontSize: AppFontSize.fontSizeSpecial,
                     fontWeight: FontWeight.w300,
                   ),

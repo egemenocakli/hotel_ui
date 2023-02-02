@@ -108,3 +108,17 @@ class AppTexts {
   static const String signUpLicenseLink =
       "https://drive.google.com/file/d/12EgwVYUJIrAw1sl3g6yk5kfGkKht0D0J/view?usp=sharing";
 }
+
+class CustomBoxDeco extends BoxDecoration {
+/*
+@override
+  // TODO: implement image
+  DecorationImage? get image => const DecorationImage(
+        image: AssetImage("assets/images/oda4.jpg"),
+      );
+      */
+  @override
+  // TODO: implement borderRadius
+  BorderRadiusGeometry? get borderRadius =>
+      const BorderRadius.only(topLeft: Radius.elliptical(90, 60), bottomRight: Radius.elliptical(90, 60));
+}
