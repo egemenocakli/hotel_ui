@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:new_ui_kit/utils/extensions/context_extension.dart';
 
-class BackgroundView extends StatelessWidget {
-  const BackgroundView({super.key});
+class BackgroundImageView extends StatelessWidget {
+  const BackgroundImageView({super.key});
 
   @override
   Widget build(BuildContext context) {

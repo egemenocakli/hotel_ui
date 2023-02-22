@@ -2,6 +2,7 @@ import 'package:buttons_tabbar/buttons_tabbar.dart';
 import 'package:flutter/material.dart';
 import 'package:new_ui_kit/constants/app_constants.dart';
 import 'package:new_ui_kit/pages/main/view/room_photos_view.dart';
+import 'package:new_ui_kit/pages/reservation/view/reservation_view.dart';
 import 'package:new_ui_kit/utils/extensions/context_extension.dart';
 
 class MainMenuView extends StatefulWidget {
@@ -43,7 +44,7 @@ class _MainMenuViewState extends State<MainMenuView> {
                   children: [
                     tabbarView(),
                     Padding(
-                      padding: const EdgeInsets.only(top: 26),
+                      padding: const EdgeInsets.only(top: 28),
                       child: buildTabbar(),
                     ),
                   ],
@@ -57,19 +58,17 @@ class _MainMenuViewState extends State<MainMenuView> {
   }
 
   TabBarView tabbarView() {
-    return TabBarView(
+    return const TabBarView(
       children: <Widget>[
-        RoomPhotosView(key: widget.key),
-        const Center(
+        RoomPhotosView(),
+        Center(
           child: Icon(Icons.directions_transit),
         ),
-        const Center(
+        ReservationView(),
+        Center(
           child: Icon(Icons.directions_transit),
         ),
-        const Center(
-          child: Icon(Icons.directions_transit),
-        ),
-        const Center(
+        Center(
           child: Icon(Icons.directions_transit),
         ),
       ],

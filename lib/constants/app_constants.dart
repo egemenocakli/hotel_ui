@@ -10,9 +10,11 @@ class AppColors {
   static const alertBackgroundColor = Color(0xFF527DAA);
   static const hintTextColor = Colors.grey;
   static const textColorBlack = Colors.black;
-  static Color textTitleGrey = Colors.grey.shade600;
+  static Color greys6 = Colors.grey.shade600;
   static Color blue = Colors.blue;
   static Color red = Colors.red;
+  static Color bGrey = Colors.blueGrey;
+  static Color desiredDawn = const Color(0xFFD8D8D8);
 }
 
 class AppImages {
@@ -102,6 +104,11 @@ class AppSizes {
   static const double borderSmall = 6;
   static const double borderMedium = 8;
   static const double borderRadiusCircular = 17;
+  static const double pageStartPadding = 120;
+}
+
+class BorderRadiusValues {
+  static BorderRadius? get borderRadius30 => const BorderRadius.all(Radius.circular(30));
 }
 
 class AppTexts {
