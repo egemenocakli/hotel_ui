@@ -59,7 +59,7 @@ class _RoomPhotosViewState extends State<RoomPhotosView> {
         top: context.height * 0.72,
         width: context.width,
         child: Container(
-          color: Colors.black26,
+          color: Colors.blueGrey.shade200,
           child: GridView.count(
             controller: ScrollController(keepScrollOffset: false),
             mainAxisSpacing: 10,

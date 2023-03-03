@@ -21,21 +21,22 @@ class _MainMenuViewState extends State<MainMenuView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xFF212121),
       body: SafeArea(
         child: SingleChildScrollView(
           child: SizedBox(
             height: context.height * 1.5,
             child: Container(
-              decoration: const BoxDecoration(
+              decoration: BoxDecoration(
                 gradient: LinearGradient(
                   begin: Alignment.topCenter,
                   end: Alignment.bottomCenter,
-                  colors: <Color>[
-                    Color(0xFF212121),
-                    Color(0xFF2e2e2e),
-                    Color(0xFF212121),
+                  colors: AppColors.gradientBackgroundColors,
+                  /*
+                  <Color>[
+                    Color(0xFFEAD6EE),
+                    Color(0xFFA0F1EA),
                   ],
+                  */
                 ),
               ),
               child: DefaultTabController(
@@ -81,9 +82,21 @@ class _MainMenuViewState extends State<MainMenuView> {
       contentPadding: const EdgeInsets.symmetric(horizontal: 12),
       borderColor: Colors.transparent,
       elevation: 2,
-      decoration: const BoxDecoration(color: Colors.black45),
-      unselectedBackgroundColor: Colors.black12,
-      unselectedLabelStyle: const TextStyle(color: Colors.white30),
+      decoration: BoxDecoration(
+        gradient: LinearGradient(
+          begin: Alignment.topLeft,
+          end: Alignment.bottomRight,
+          colors: AppColors.tabbarColors,
+          /*
+          <Color>[
+            Color(0xFF02AABD),
+            Color(0xFF00CDAC),
+          ],
+*/
+        ),
+      ), //const BoxDecoration(color: Colors.black45),
+      unselectedBackgroundColor: const Color(0xFF00AFB9),
+      unselectedLabelStyle: const TextStyle(color: Colors.white54),
       labelStyle: const TextStyle(color: AppColors.white, fontWeight: FontWeight.bold),
       //height: 56,
       tabs: const [

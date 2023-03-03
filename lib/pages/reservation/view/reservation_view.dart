@@ -25,8 +25,9 @@ class _ReservationViewState extends State<ReservationView> {
 
 Widget _buildScreen(BuildContext context, ReservationViewModel viewModel) {
   return Scaffold(
-    backgroundColor: AppColors.greys6,
+    backgroundColor: const Color(0xFFD8D8D8),
     body: Container(
+      /*
       decoration: const BoxDecoration(
         gradient: LinearGradient(
           begin: Alignment.topCenter,
@@ -39,6 +40,7 @@ Widget _buildScreen(BuildContext context, ReservationViewModel viewModel) {
           ],
         ),
       ),
+      */
       child: Padding(
         padding: const EdgeInsets.only(top: AppSizes.pageStartPadding),
         child: Column(
@@ -55,7 +57,7 @@ Widget _buildScreen(BuildContext context, ReservationViewModel viewModel) {
               child: reservationCalender(context, viewModel),
             ),
             */
-            dropDownGuest(viewModel),
+            dropDownGuest(viewModel, context),
             InkWell(
               onTap: () {
                 viewModel.showCalender = !viewModel.showCalender;
@@ -74,7 +76,7 @@ Widget _buildScreen(BuildContext context, ReservationViewModel viewModel) {
             ),
             viewModel.showCalender == true
                 ? Container(
-                    padding: const EdgeInsets.only(top: 20),
+                    padding: const EdgeInsets.only(top: 10),
                     child: reservationCalender(context, viewModel),
                   )
                 : const SizedBox()
@@ -85,49 +87,55 @@ Widget _buildScreen(BuildContext context, ReservationViewModel viewModel) {
   );
 }
 
-Padding dropDownGuest(ReservationViewModel viewModel) {
-  return Padding(
-    padding: const EdgeInsets.all(8.0),
-    child: Container(
-      padding: const EdgeInsets.symmetric(horizontal: AppSizes.sizeSmall),
-      decoration: BoxDecoration(borderRadius: BorderRadiusValues.borderRadius30, color: Colors.grey.shade800),
-      //color: Colors.grey.shade800,
-      child: DropdownButton<String>(
-        underline: const SizedBox(),
-        value: viewModel.dropdownValue,
-        borderRadius: BorderRadius.circular(30),
-        dropdownColor: Colors.grey.shade800,
-        onChanged: (String? localVal) {
-          viewModel.dropdownValue = localVal!;
-        },
-        items: viewModel.guestCount.map<DropdownMenuItem<String>>((String value) {
-          return DropdownMenuItem<String>(
-            value: value,
-            child: RichText(
-                text: TextSpan(children: [
-              const WidgetSpan(
-                  alignment: PlaceholderAlignment.middle,
-                  child: Icon(
-                    Icons.person_2_outlined,
-                    color: AppColors.white,
-                  )),
-              TextSpan(text: " $value"),
-            ])),
-            /*
-                    Row(
-                      children: [
-                        const Icon(Icons.person_2_outlined, color: AppColors.white),
-                        Text(
-                          value,
-                          style: const TextStyle(color: AppColors.white),
-                        )
-                      ],
-                    ), //Text(value),
-                    */
-          );
-        }).toList(),
+Widget dropDownGuest(ReservationViewModel viewModel, context) {
+  return Row(
+    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+    children: [
+      Text("Guest count", style: Theme.of(context).textTheme.titleLarge?.copyWith(color: Colors.white)),
+      Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: Container(
+          padding: const EdgeInsets.symmetric(horizontal: AppSizes.sizeSmall),
+          decoration: BoxDecoration(borderRadius: BorderRadiusValues.borderRadius30, color: Colors.grey.shade800),
+          //color: Colors.grey.shade800,
+          child: DropdownButton<String>(
+            underline: const SizedBox(),
+            value: viewModel.dropdownValue,
+            borderRadius: BorderRadius.circular(30),
+            dropdownColor: Colors.grey.shade800,
+            onChanged: (String? localVal) {
+              viewModel.dropdownValue = localVal!;
+            },
+            items: viewModel.guestCount.map<DropdownMenuItem<String>>((String value) {
+              return DropdownMenuItem<String>(
+                value: value,
+                child: RichText(
+                    text: TextSpan(children: [
+                  const WidgetSpan(
+                      alignment: PlaceholderAlignment.middle,
+                      child: Icon(
+                        Icons.person_2_outlined,
+                        color: AppColors.white,
+                      )),
+                  TextSpan(text: " $value"),
+                ])),
+                /*
+                        Row(
+                          children: [
+                            const Icon(Icons.person_2_outlined, color: AppColors.white),
+                            Text(
+                              value,
+                              style: const TextStyle(color: AppColors.white),
+                            )
+                          ],
+                        ), //Text(value),
+                        */
+              );
+            }).toList(),
+          ),
+        ),
       ),
-    ),
+    ],
   );
 }
 

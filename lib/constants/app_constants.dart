@@ -15,6 +15,27 @@ class AppColors {
   static Color red = Colors.red;
   static Color bGrey = Colors.blueGrey;
   static Color desiredDawn = const Color(0xFFD8D8D8);
+  static List<Color> tabbarColors = [const Color(0xFF02AABD), const Color(0xFF00CDAC)];
+  static List<Color> gradientBackgroundColors = [const Color(0xFFEAD6EE), const Color(0xFFA0F1EA)];
+
+/*
+Color(0xFF282A3A),
+
+Color(0xFF00AFB9),
+
+#tabbar color
+colors: <Color>[
+            Color(0xFF02AABD),
+            Color(0xFF00CDAC),
+          ],
+
+#background
+colors: <Color>[
+                    Color(0xFFEAD6EE),
+                    Color(0xFFA0F1EA),
+                  ],
+
+ */
 }
 
 class AppImages {
